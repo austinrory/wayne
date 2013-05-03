@@ -1,6 +1,14 @@
 Wayne::Application.routes.draw do
 
-root to: 'public/welcome.html'
+  get "pages/home"
+
+  get "pages/info"
+
+  get "pages/about"
+
+  get "pages/game"
+
+  get "pages/finish"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
