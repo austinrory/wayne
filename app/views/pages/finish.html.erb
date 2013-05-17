@@ -1,2 +1,8 @@
-<h1>Pages#finish</h1>
-<p>Find me in app/views/pages/finish.html.erb</p>
+<% provide :title, "Finish" %>
+
+<!-- case | when $s / @char / @message -->
+
+<% @message = "Excellent!!!"; @char = "Wayne Campbell"; %>
+
+<%= render "finish/char" %>
+

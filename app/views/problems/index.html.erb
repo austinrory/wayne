@@ -1,0 +1,32 @@
+<h1>Listing problems</h1>
+
+<table>
+  <tr>
+    <th>Quote</th>
+    <th>Answer</th>
+    <th>Value</th>
+    <th>Image</th>
+    <th>Number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @problems.each do |problem| %>
+  <tr>
+    <td><%= problem.quote %></td>
+    <td><%= problem.answer %></td>
+    <td><%= problem.value %></td>
+    <td><%= problem.image %></td>
+    <td><%= problem.number %></td>
+    <td><%= link_to 'Show', problem %></td>
+    <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
+    <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Problem', new_problem_path %>

@@ -1,0 +1,14 @@
+<% provide :title, "Display" %>
+
+<h1 class="title">Problem #<%=@problem.number%></h1>
+
+<body style="background-image:url(<%=@problem.image%>);background-size=100%">
+
+  <div class="text" id="display">
+    <%= @problem.quote %>
+    <form>
+      <input type="text">
+    </form>
+  </div>
+
+</body>

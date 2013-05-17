@@ -1,14 +1,18 @@
 Wayne::Application.routes.draw do
 
-  get "pages/home"
+  resources :problems
 
-  get "pages/info"
+  root to: 'pages#home'
 
-  get "pages/about"
+  match '/about', to: 'pages#about'
+  match '/info', to: 'pages#info'
+  match '/game', to: 'pages#game'
+  match '/finish', to: 'pages#finish'
 
-  get "pages/game"
-
-  get "pages/finish"
+  get "game/new"
+  get "game/problem"
+  get "game/finish"
+  post "game/answer"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

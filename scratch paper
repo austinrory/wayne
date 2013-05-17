@@ -1,0 +1,29 @@
+ <div class="text" id="game">
+    <%= @num.quote %>
+    <form>
+      <input type = "text" name = "user">
+      <%= gets.chomp = answer %>
+    </form>
+  </div>
+
+
+    <% if answer == @current.answer %>
+ <% 	render 'pages/finish' %>
+<%  else %>
+<%  	render 'pages/home' %>
+ <% end %>
+
+
+
+		    <%= text_field(:problem, :guess) %>
+		    <%= submit_tag("Go!") %>
+
+
+
+this is what i have for my form tag:
+
+ 	<div stlye="margin-top:5px">
+     <%= form_tag('/session') do -%>
+     	 <%= submit_tag("Go!") %>
+     <% end -%>
+  </div>

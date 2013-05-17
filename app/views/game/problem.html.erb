@@ -1,0 +1,17 @@
+<% provide :title, "Game" %>
+
+<h1 class="title" id="question">Question #<%=@question%></h1>
+<h1 class="title" id="question">Score = <%=@score%></h1>
+
+<% @num=Problem.find_by_number($current.number) %>
+
+<body style="background-image:url(<%=@num.image%>);background-size=100%">
+
+ <div class="text" id="game">
+    <%= @num.quote %>
+    <form action="/game/answer" method="post">
+      <input type="text" name="answer">
+    </form>
+  </div>
+
+</body>
