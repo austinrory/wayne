@@ -4,13 +4,18 @@
 <h1 class="title" id="question">Score = <%=@score%></h1>
 
 <% @num=Problem.find_by_number($current.number) %>
+<% @choices = [@num.answer, @num.guess_one, @num.guess_two].shuffle%>
 
 <body style="background-image:url(<%=@num.image%>);background-size=100%">
 
  <div class="text" id="game">
     <%= @num.quote %>
     <form action="/game/answer" method="post">
-      <input type="text" name="answer">
+    	<div class="answers">
+	      <input type="radio" name="answer" value = "<%=@choices[0]%>" onclick="this.form.submit()"> <%=@choices[0]%><br>
+	      <input type="radio" name="answer" value = "<%=@choices[1]%>" onclick="this.form.submit()"> <%=@choices[1]%><br>
+	      <input type="radio" name="answer" value = "<%=@choices[2]%>" onclick="this.form.submit()"> <%=@choices[2]%>
+	    </div>
     </form>
   </div>
 

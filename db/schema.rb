@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503070325) do
+ActiveRecord::Schema.define(:version => 20130518203153) do
 
   create_table "problems", :force => true do |t|
     t.string   "quote"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130503070325) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "number"
+    t.string   "guess_one"
+    t.string   "guess_two"
   end
 
   add_index "problems", ["number"], :name => "index_problems_on_number"

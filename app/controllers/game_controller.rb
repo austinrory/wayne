@@ -4,6 +4,7 @@ class GameController < ApplicationController
 		$x = 0
 		$s = 0
 		$q = 1
+		$problems = Problem.all.shuffle
 		redirect_to "/game/problem"
 	end
 
@@ -12,8 +13,7 @@ class GameController < ApplicationController
 		if $x < 10
 			@question = $q
 			@score = $s
-			@problems = Problem.all.shuffle
-			$current = @problems[$x]
+			$current = $problems[$x]
 			$x += 1
 			$q += 1
 		else 
@@ -30,7 +30,7 @@ class GameController < ApplicationController
 			$s += 10
 			redirect_to "/game/problem"
 		else
-			$s -= 5
+			$s -= 10
 			redirect_to "/game/problem"
 		end
 
@@ -39,22 +39,22 @@ class GameController < ApplicationController
 
 	def finish
 
-		if (-100..0).include?($s)
+		if (-100..10).include?($s)
 			@char = "Benjamin Oliver "
 			@message = "You suck!"
-		elsif (1..10).include?($s)
+		elsif (10..20).include?($s)
 			@char = "Noah Vanderhoff"
 			@message = "You suck!"
-		elsif (11..20).include?($s)
+		elsif (21..30).include?($s)
 			@char = "Russell"
 			@message = "Eh."
-		elsif (21..30).include?($s)
+		elsif (31..40).include?($s)
 			@char = "Stan Mikita"
 			@message = "Eh."
-		elsif (31..40).include?($s)
+		elsif (41..50).include?($s)
 			@char = "Old Man Withers"
 			@message = "Eh."
-		elsif (41..50).include?($s)
+		elsif (51..60).include?($s)
 			@char = "Officer Khoharksi"
 			@message = "Cool!"
 		else

@@ -7,7 +7,11 @@
   <div class="text" id="display">
     <%= @problem.quote %>
     <form>
-      <input type="text">
+      <div class="answers">
+<input type="radio" name="answer" value = "<%=@problem.answer%>" onclick="this.form.submit()"> <%=@problem.answer%><br>
+<input type="radio" name="answer" value = "<%=@problem.guess_one%>" onclick="this.form.submit()"> <%=@problem.guess_one%><br>
+<input type="radio" name="answer" value = "<%=@problem.guess_two%>" onclick="this.form.submit()"> <%=@problem.guess_two%>
+	    </div>
     </form>
   </div>
 
