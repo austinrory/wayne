@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 .title {
-	font-family:Din, sans-serif; 
+	font-family:'Oxygen', sans-serif; 
 	text-align:center; 
 	font-weight:100; 
 	color:white; 
@@ -17,7 +17,7 @@
   margin-left:-170px;
 	text-align:center; 
 	border-radius:30px; 
-	font-family:Din, sans-serif; 
+	font-family:'Oxygen', sans-serif;
 	padding:20px;
 	display:block;
 	position:fixed;
@@ -32,15 +32,15 @@
 	font-weight:bold; 
 	padding-bottom:5px; 
 	padding-top:5px;
-	font-family:Din;
+	font-family:'Oxygen', sans-serif;
 }
 
 .text {
 	color:white;
-	font-family:'Din-Light', cursive;
+	font-family:'Oxygen', sans-serif;
 	text-align:center;
 	font-size:24px;
-	margin:140px auto 0 auto;
+	margin:190px auto 0 auto;
 	width:75%;
 	line-height:1.2;
 	background-color:rgba(0,0,0,0.7);
@@ -108,7 +108,7 @@ label {
 span {
 	background-color:yellow;
 	border-radius:5px;
-	padding:9px 7px 0px 7px;
+	padding:0px 7px 0px 7px;
 	color:teal;
 	line-height:1px;
 }
@@ -117,7 +117,7 @@ span {
 /*                            											finish																						*/
 
 .title#finish {
-	font-family:Din, sans-serif; 
+	font-family:'Oxygen', sans-serif; 
 	text-align:center; 
 	font-weight:100; 
 	font-size:36px;
@@ -140,6 +140,7 @@ span {
 	margin-left:22%;
 	text-align:center;
 	width:50%;
+	background-color:rgba(0,0,0,0.4);
 	padding:30px 30px 10px 30px;
 	position:fixed;
 	bottom:160px;
@@ -148,7 +149,7 @@ span {
 /*                            											about																						*/
 
 .text#about {
-	width:30%;
+	width:33%;
 	margin-top:10%;
 	margin-left:65%;
 }
