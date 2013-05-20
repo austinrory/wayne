@@ -1,5 +1,7 @@
 class ProblemsController < ApplicationController
 
+  before_filter :authenticate
+
   # GET /problems
   # GET /problems.json
   def index
@@ -81,4 +83,13 @@ class ProblemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "austinrory" && password == "gracieis1"
+    end
+  end
+
 end
