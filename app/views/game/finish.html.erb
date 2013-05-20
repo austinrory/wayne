@@ -4,10 +4,16 @@
 
 <h1 class="title">Finished</h1>
 
-<div class="title" id="finish">
-<h2 class="title" id="finish">You got <%= $s %> points. <%= @message %> You earned the level of:</h2>
-<h1 style="font-size:45px"> <%= @char %>! <h2>
+<div class="text" id="finish">
+<p>You got <%= session[:s] %> points. <strong><%= @message %></strong> You earned the level of:</p>
+<p style="font-size:45px"> <strong><%= @char %>!</strong></p>
 </div>
+
+<a class="button" id="home" href="/game/new" style="text-decoration:none">
+		<div class="button_text">
+			<p>Play Again!</p>
+		</div>
+</a>
 
 </body>
 

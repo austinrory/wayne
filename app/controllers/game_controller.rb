@@ -1,21 +1,22 @@
 class GameController < ApplicationController
 
 	def new
-		$x = 0
-		$s = 0
-		$q = 1
-		$problems = Problem.all.shuffle
+		session[:x] = 0
+		session[:s] = 0
+		session[:q] = 1
+		session[:problems] = Problem.all.shuffle.collect(&:id)
 		redirect_to "/game/problem"
 	end
 
 	def problem
 
-		if $x < 10
-			@question = $q
-			@score = $s
-			$current = $problems[$x]
-			$x += 1
-			$q += 1
+		if session[:x] < 10
+			@question = session[:q]
+			@score = session[:s]
+			session[:current] = session[:problems][session[:x]]
+			session[:x] += 1
+			session[:q] += 1
+			@problem = Problem.find(session[:current])
 		else 
 			redirect_to "/game/finish"
 		end
@@ -23,14 +24,11 @@ class GameController < ApplicationController
 	end
 
 	def answer
-
-		params[:answer]
-
-		if params[:answer].downcase == $current[:answer]
-			$s += 10
+		if params[:answer] == Problem.find(session[:current]).answer
+			session[:s] += 10
 			redirect_to "/game/problem"
 		else
-			$s -= 10
+			session[:s] -= 5
 			redirect_to "/game/problem"
 		end
 
@@ -39,27 +37,40 @@ class GameController < ApplicationController
 
 	def finish
 
-		if (-100..10).include?($s)
+		if (-100..0).include?(session[:s])
 			@char = "Benjamin Oliver "
-			@message = "You suck!"
-		elsif (10..20).include?($s)
+			@message = "You Suck!"
+		elsif (1..10).include?(session[:s])
 			@char = "Noah Vanderhoff"
-			@message = "You suck!"
-		elsif (21..30).include?($s)
+			@message = "You Suck!"
+		elsif (10..20).include?(session[:s])
 			@char = "Russell"
-			@message = "Eh."
-		elsif (31..40).include?($s)
+			@message = "Boring."
+		elsif (21..30).include?(session[:s])
 			@char = "Stan Mikita"
-			@message = "Eh."
-		elsif (41..50).include?($s)
+			@message = "Creepy."
+		elsif (31..40).include?(session[:s])
 			@char = "Old Man Withers"
-			@message = "Eh."
-		elsif (51..60).include?($s)
+			@message = "Creepy."
+		elsif (41..50).include?(session[:s])
 			@char = "Officer Khoharksi"
 			@message = "Cool!"
-		else
+		elsif (51..60).include?(session[:s])
+			@char = "Alice Cooper"
+			@message = "Rock On!"
+		elsif (61..70).include?(session[:s])
+			@char = "Dream Girl"
+			@message = "Awesome!"
+		elsif (71..80).include?(session[:s])
+			@char = "Cassandra"
+			@message = "You Really Wail!"
+		elsif (81..90).include?(session[:s])
+			@char = "Garth"
+			@message = "Party Time!"
+		elsif (91..100).include?(session[:s])
 			@char = "Wayne Campbell"
 			@message = "Excellent!"
+		else
 		end
 
 	end

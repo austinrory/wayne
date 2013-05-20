@@ -14,12 +14,15 @@
 	background-color:yellow;
 	height:70px; 
 	width:300px;  
-	margin:400px auto 0 auto;
+  margin-left:-170px;
 	text-align:center; 
 	border-radius:30px; 
 	font-family:Din, sans-serif; 
 	padding:20px;
 	display:block;
+	position:fixed;
+	bottom:40px;
+	left: 50%;
 }
 
 .button_text {
@@ -46,12 +49,12 @@
 }
 
 .text#game {
-	position:fixed;
-	margin-top:330px;
 	margin-left:22%;
 	text-align:center;
 	width:50%;
-	padding:30px 30px 0px 30px;
+	padding:30px 30px 10px 30px;
+	position:fixed;
+	bottom:20px;
 }
 
 .text#display {
@@ -69,7 +72,7 @@
 
 #home_back {
 	background-image:url(/images/wayne_garth.png); 
-	background-size:100%;
+	background-size:cover;
 }
 
 
@@ -78,11 +81,7 @@
 
 #info_back {
 	background-image:url(/images/airplane.png);
-	background-size:100%;
-}
-
-.button#info {
-	margin-top:70px;
+	background-size:cover;
 }
 
 
@@ -90,7 +89,7 @@
 
 #game_back {
 	background-image:url(/images/pralines.png);
-	background-size:100%;
+	background-size:cover;
 }
 
 form {
@@ -102,15 +101,48 @@ form {
 	text-align:left;
 }
 
+label {
+	font-size:18px;
+}
+
+span {
+	background-color:yellow;
+	border-radius:5px;
+	padding:9px 7px 0px 7px;
+	color:teal;
+	line-height:1px;
+}
+
 
 /*                            											finish																						*/
 
 .title#finish {
-	margin-top:40%;
 	font-family:Din, sans-serif; 
 	text-align:center; 
 	font-weight:100; 
 	font-size:36px;
+	background-color:rgba(0,0,0,0.7);
+	padding:5px;
+	padding-right:5px;
+	padding-left:5px;
+	border-radius:30px;
+	width:50%;
+	margin:140px auto 0 auto;
+}
+
+
+.char {
+	font-weight:bold;
+	font-size:45px;
+}
+
+.text#finish {
+	margin-left:22%;
+	text-align:center;
+	width:50%;
+	padding:30px 30px 10px 30px;
+	position:fixed;
+	bottom:160px;
 }
 
 /*                            											about																						*/

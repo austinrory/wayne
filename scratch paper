@@ -27,3 +27,6 @@ this is what i have for my form tag:
      	 <%= submit_tag("Go!") %>
      <% end -%>
   </div>
+
+
+  <% choices = [@num.answer, @num.guess_1, @num.guess_2]; choices.shuffle%>
