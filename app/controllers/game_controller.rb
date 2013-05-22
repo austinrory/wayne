@@ -28,7 +28,6 @@ class GameController < ApplicationController
 			session[:s] += 10
 			redirect_to "/game/problem"
 		else
-			session[:s] -= 5
 			redirect_to "/game/problem"
 		end
 
@@ -38,7 +37,7 @@ class GameController < ApplicationController
 	def finish
 
 		if (-100..0).include?(session[:s])
-			@char = "Benjamin Oliver "
+			@char = "Benjamin Oliver"
 			@message = "You Suck!"
 		elsif (1..10).include?(session[:s])
 			@char = "Noah Vanderhoff"
@@ -68,7 +67,7 @@ class GameController < ApplicationController
 			@char = "Garth"
 			@message = "Party Time!"
 		elsif (91..100).include?(session[:s])
-			@char = "Wayne Campbell"
+			@char = "Michael Bluth"
 			@message = "Excellent!"
 		else
 		end
