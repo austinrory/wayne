@@ -136,12 +136,14 @@ span {
 	font-size:45px;
 }
 
-.text#finish_text {
+.text#finish {
+	margin-left:22%;
 	text-align:center;
 	width:50%;
 	background-color:rgba(0,0,0,0.4);
 	padding:30px 30px 10px 30px;
-	margin:10px auto 0 auto;
+	position:fixed;
+	bottom:160px;
 }
 
 /*                            											about																						*/
