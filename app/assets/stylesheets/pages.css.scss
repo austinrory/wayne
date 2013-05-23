@@ -80,7 +80,7 @@
 /*                            											info 																						*/
 
 #info_back {
-	background-image:url(/images/airplane.png);
+	background-image:url(/images/wallpaper.jpg);
 	background-size:cover;
 }
 
@@ -136,14 +136,12 @@ span {
 	font-size:45px;
 }
 
-.text#finish {
-	margin-left:22%;
+.text#finish_text {
 	text-align:center;
 	width:50%;
 	background-color:rgba(0,0,0,0.4);
 	padding:30px 30px 10px 30px;
-	position:fixed;
-	bottom:160px;
+	margin:10px auto 0 auto;
 }
 
 /*                            											about																						*/
