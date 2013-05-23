@@ -28,7 +28,6 @@ class GameController < ApplicationController
 			session[:s] += 10
 			redirect_to "/game/problem"
 		else
-			session[:s] -= 5
 			redirect_to "/game/problem"
 		end
 
